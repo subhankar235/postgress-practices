@@ -1,0 +1,20 @@
+1.db.js
+
+👉 “How to talk to database”
+
+
+2. basic-queries.js
+
+👉 “What operations exist”
+
+create table
+insert user
+get users
+
+
+
+
+
+3.main.js
+
+👉 “Run and test everything”
