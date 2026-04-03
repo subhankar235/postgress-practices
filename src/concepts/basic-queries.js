@@ -15,13 +15,12 @@ async function createUsersTable() {
   try {
     await db(createUsersTableQuery);
     console.log("Users table created successfully");
-  } catch (err) {
+  } catch (error) {
     console.error("Error creating table:", err);
   }
 }
 
 //insert---
-const db = require('../db/db');
 //it declare the function 
 async function insertUser(username, email) {
   const insertUserQuery = `
@@ -33,7 +32,7 @@ async function insertUser(username, email) {
     //it run the declare function
     const res = await db(insertUserQuery, [username, email]);
     console.log('user inserted succesfully', res.rows[0]);   // return inserted user
-  } catch (err) {
+  } catch (error) {
 
 
     console.error("Error inserting user:", err);
@@ -42,4 +41,4 @@ async function insertUser(username, email) {
 
 
 //fetch--
-module.exports = createUsersTable;
+module.exports = {createUsersTable,insertUser}

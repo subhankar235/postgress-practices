@@ -5,8 +5,7 @@
 
 2. basic-queries.js
 
-👉 “What operations exist”
-
+we create the functions no guving the vALUES
 create table
 insert user
 get users
@@ -16,5 +15,5 @@ get users
 
 
 3.main.js
-
+now gives real value for the functions aND RUN
 👉 “Run and test everything”
