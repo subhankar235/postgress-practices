@@ -17,3 +17,67 @@ get users
 3.main.js
 now gives real value for the functions aND RUN
 👉 “Run and test everything”
+
+
+//the * always return the ..affected row
+
+# 📌 DB Usage Notes (Node.js + PostgreSQL)
+
+## 🔹 Core Idea
+
+How you call `db` depends on **what you exported** from `db.js`.
+
+---
+
+## 🔸 Case 1: Exporting a FUNCTION (Wrapper)
+
+### db.js
+
+```
+const db = (query, params) => {
+  return pool.query(query, params);
+};
+
+module.exports = db;
+```
+
+### Usage
+
+```
+db(query, [params])
+```
+
+### ✅ Why use this?
+
+* Cleaner code
+* Centralized error handling
+* Easy to add logging, retry, etc.
+* Better for large projects
+
+---
+
+## 🔸 Case 2: Exporting the MAIN OBJECT (Pool)
+
+### db.js
+
+```
+module.exports = pool;
+```
+
+### Usage
+
+```
+db.query(query, [params])
+```
+
+### ✅ Why use this?
+
+* Direct access
+* Simple for small apps
+
+### ❌ Drawback
+
+* No control (no central logging, handling)
+
+---
+
